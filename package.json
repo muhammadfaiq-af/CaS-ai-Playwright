@@ -1,0 +1,22 @@
+{
+  "name": "cas-ai-playwright",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/muhammadfaiq-af/CaS-ai-Playwright.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/muhammadfaiq-af/CaS-ai-Playwright/issues"
+  },
+  "homepage": "https://github.com/muhammadfaiq-af/CaS-ai-Playwright#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.40.1",
+    "@types/node": "^20.10.4"
+  }
+}
