@@ -16,6 +16,4 @@ test("Verify that the user is able to access visit the login page",async ({page}
    await page.screenshot({path: 'Images/login.png'});
    
 
-
-
 })
