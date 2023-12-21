@@ -1,11 +1,12 @@
 const {test, expect} = require('@playwright/test')
 import {LoginPage} from '../Selectors/Common' 
+
+const {randomValue} = require ('../Selectors/randomValue.js')
+
 const createProjectSelectors = require('../Selectors/CreatingProjectPage.js')
 
 const {email, password, loginButton, openProjectForm, projectName, projectUrl, projectContext, monthlyPost, targetAudience, toneOfVoice, wordsCount, createProjectButton, projectNavBar} = createProjectSelectors 
 
-const randomDate = Date.now()
-const randomName = `testProject${randomDate}`
 
 test ('Verify that the user is able to create a Project', async ({page}) => {
 
@@ -18,7 +19,7 @@ test ('Verify that the user is able to create a Project', async ({page}) => {
     await page.locator(projectNavBar).click()
     await page.waitForTimeout(4000)
     await page.click(openProjectForm)
-    await page.fill(projectName, randomName)
+    await page.fill(projectName, `${randomValue}`)
     await page.fill(projectUrl, "https://getintopc.com/")
     await page.fill(projectContext, "Test")
     await page.fill(monthlyPost, "12")

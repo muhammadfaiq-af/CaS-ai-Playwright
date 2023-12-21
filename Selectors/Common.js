@@ -20,5 +20,8 @@ class Login {
         await this.page.locator(this.emailfield).fill(email)
         await this.page.locator(this.passwordfield).fill(password)
         await this.page.locator(this.loginBtn).click()
+        
+
     }
+    
 }
