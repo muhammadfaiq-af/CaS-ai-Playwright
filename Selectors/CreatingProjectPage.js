@@ -5,6 +5,7 @@ module.exports = {
     email: '#email',
     password: '#password',
     loginButton: '[type="submit"]',
+    projectNavBar: "//a[contains(.,'Projects')]",
     openProjectForm: '#open_create_project_form',
     projectName: '#project-name',
     projectUrl: '#project-url',
@@ -13,6 +14,5 @@ module.exports = {
     targetAudience: '#target-audience',
     toneOfVoice: '#tone-of-voice',
     wordsCount: '#words_count',
-    createProjectButton: '[class="cs-secondary-btn create-project"]',
-    projectNavBar: "//a[contains(.,'Projects')]",
+    createProjectButton: "//button[@type='submit']",
 };

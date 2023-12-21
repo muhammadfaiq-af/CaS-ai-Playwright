@@ -8,9 +8,6 @@
  // selectors.js
   module.exports = {
     
-    email: '#email',
-    password: '#password',
-    loginButton: '[type="submit"]',
     h1: '.filter-area.mb-5',
     welcomeAssertion: '[class="filter-area mb-5"] h1',
     validationAssert: '#email ~ span strong',
