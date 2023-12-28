@@ -6,8 +6,7 @@ const randomName = `testProject${randomDate}`
 
 const createProjectSelectors = require('../Selectors/CreatingProjectPage.js')
 
-const {openProjectForm, projectName, projectUrl, projectContext, monthlyPost, targetAudience, toneOfVoice, wordsCount, createProjectButton, projectNavBar} = createProjectSelectors 
-
+const {openProjectForm, projectName, projectUrl, projectContext, monthlyPost, targetAudience, toneOfVoice, wordsCount, createProjectButton, projectNavBar,writePostBtn, nextBtn,postKeyword, wordCountPost, contextPost, writePostBtn1, createPostBtnPopup, inQueueTextVerification} = createProjectSelectors 
 
 test ('Verify that the user is able to create a Project', async ({page}) => {
 
@@ -21,7 +20,7 @@ test ('Verify that the user is able to create a Project', async ({page}) => {
     await page.waitForTimeout(4000)
     await page.click(openProjectForm)
     await page.fill(projectName, randomName)
-    await page.fill(projectUrl, "https://getintopc.com/")
+    await page.fill(projectUrl, `${await login.getRandomURL()}`)
     await page.fill(projectContext, "Test")
     await page.fill(monthlyPost, "12")
     await page.fill(targetAudience, "Software Engineer")
@@ -30,17 +29,25 @@ test ('Verify that the user is able to create a Project', async ({page}) => {
     await page.selectOption(wordsCount, "1,251 to 2,000 words")
     await page.waitForTimeout(6000)
     await page.click(createProjectButton)
-    // await page.pause(3000)
+    await page.waitForTimeout(3000)
 
     // Creating post in the project
-    // await page.waitForTimeout(4000)
-    await page.click('.project-content-btn .cs-secondary-btn')
-    await page.click("//button[text()='Next']")
-    await page.fill('#new-keyword', "Test")
-    await page.selectOption('#new-keyword-word-count', '1,251 to 2,000 words')
-    await page.fill('#new-keyword-context', "Software Testing")
-    await page.click("(//button[@class='cs-secondary-btn'])[1]")
 
+    await page.setViewportSize({width: 1600, height: 576})
+
+    await page.click(writePostBtn, {force: true})
+    await page.click(nextBtn, {force: true})
+    await page.fill(postKeyword, "Test")
+    await page.selectOption(wordCountPost, '1,251 to 2,000 words')
+    await page.fill(contextPost, "Software Testing")
+
+    await page.click(writePostBtn1)
+    await page.waitForTimeout(3000)
+
+    await page.click(createPostBtnPopup)
+
+    await page.waitForTimeout(15000)
+    await expect(page.locator(inQueueTextVerification)).toContainText(' In Queue ')
 
 
     await page.pause(3000)

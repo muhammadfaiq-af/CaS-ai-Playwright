@@ -15,4 +15,13 @@ module.exports = {
     toneOfVoice: '#tone-of-voice',
     wordsCount: '#words_count',
     createProjectButton: "//button[@type='submit']",
+    writePostBtn: `"button[onclick="showAddContent('posts tab')"`,
+    nextBtn: "//button[text()='Next']",
+    postKeyword: '#post-keyword',
+    wordCountPost: '#new-keyword-word-count',
+    contextPost: '#new-keyword-context',
+    writePostBtn1: "(//button[@class='cs-secondary-btn'])[1]",
+    createPostBtnPopup: "//button[text()='Yes, create post!']",
+    inQueueTextVerification: 'span.tag.in-queue'
+
 };
