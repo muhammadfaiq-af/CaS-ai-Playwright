@@ -17,6 +17,7 @@ const {welcomeAssertion, validationAssert, userIcon, logoutButton, welcomeBackAs
     //await expect(header).toContainText('Welcome back, Taimur Aamer!')
 
     await expect(header).toHaveText(/.* Taimur Aamer!/)
+    
     await expect(page.locator(welcomeAssertion)).toContainText('Welcome back')
 
 })

@@ -1,0 +1,42 @@
+const {test, expect} = require('@playwright/test')
+
+const aiDetectorSelector = require('../Selectors/aiDetectorPage.js')
+import {LoginPage} from '../Selectors/Common' 
+const {aiDectectoBtn, urlField, fetchUrlBtn, scanContentBtn, passHuman, readsAi, probability} = aiDetectorSelector
+
+test ('Verify that the user is able to fetch content from the URL', async ({page}) => {
+
+    const login = new LoginPage(page)
+    await login.gotoLogin()
+    await login.loginBtnClick('1t.aamer@gmail.com', '!Test123*')
+
+    await page.click(aiDectectoBtn)
+    await page.waitForTimeout(3000)
+    await page.fill(urlField, `${await login.getRandomURL()}`)
+    await page.waitForTimeout(3000)
+    await page.click(fetchUrlBtn)
+    await page.waitForTimeout(3000)
+    await page.click(scanContentBtn)
+
+    await page.waitForTimeout(14000)
+
+
+    const passAsHuman = /.*Passes as Human! /
+    const readsLikeAi = /.*Reads like AI! /
+
+    await page.waitForSelector('h3#score_message >> span')
+    const pass1 =  page.locator('h3#score_message >> span').textContent()
+    const pass =  page.locator('h3#score_message >> span')
+
+    if(pass1 === passAsHuman)
+    {
+        await expect(await pass).toHaveText(/.*Passes as Human! /)
+    }
+        else 
+        {
+            await expect(await pass).toHaveText(/.*Reads like AI! /)
+        }
+    await page.pause(3000)
+
+
+})

@@ -33,10 +33,10 @@ test ('Verify that the user is able to create a Project', async ({page}) => {
 
     // Creating post in the project
 
-    await page.setViewportSize({width: 1600, height: 576})
+    // await page.setViewportSize({width: 1600, height: 576})
 
-    await page.click(writePostBtn, {force: true})
-    await page.click(nextBtn, {force: true})
+    await page.click(writePostBtn)
+    await page.click(nextBtn)
     await page.fill(postKeyword, "Test")
     await page.selectOption(wordCountPost, '1,251 to 2,000 words')
     await page.fill(contextPost, "Software Testing")
@@ -47,7 +47,7 @@ test ('Verify that the user is able to create a Project', async ({page}) => {
     await page.click(createPostBtnPopup)
 
     await page.waitForTimeout(15000)
-    await expect(page.locator(inQueueTextVerification)).toContainText(' In Queue ')
+    await expect(page.locator(inQueueTextVerification)).toContainText(' In Queue ') 
 
 
     await page.pause(3000)
