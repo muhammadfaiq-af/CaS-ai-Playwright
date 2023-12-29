@@ -21,22 +21,23 @@ test ('Verify that the user is able to fetch content from the URL', async ({page
     await page.waitForTimeout(14000)
 
 
-    const passAsHuman = /.*Passes as Human! /
-    const readsLikeAi = /.*Reads like AI! /
+    const passAsHuman = 'Passes as Human! '
+    const readsLikeAi = 'Reads like AI! '
 
     await page.waitForSelector('h3#score_message >> span')
-    const pass1 =  page.locator('h3#score_message >> span').textContent()
-    const pass =  page.locator('h3#score_message >> span')
+    const pass1 = await page.locator('h3#score_message >> span').textContent();
+    console.log(pass1);
 
-    if(pass1 === passAsHuman)
-    {
-        await expect(await pass).toHaveText(/.*Passes as Human! /)
+
+    if (await pass1 === passAsHuman) {
+        const pass = await page.locator('h3#score_message >> span');
+        await expect(await pass).toHaveText(passAsHuman);
+    } else {
+        const pass = await page.locator('h3#score_message >> span');
+        await expect(await pass).toHaveText(readsLikeAi);
     }
-        else 
-        {
-            await expect(await pass).toHaveText(/.*Reads like AI! /)
-        }
-    await page.pause(3000)
+
+        await page.pause(3000)
 
 
 })
