@@ -2,11 +2,20 @@ const { test, expect} = require('@playwright/test')
 
 import { LoginPage } from '../Selectors/Common'
 
+
 const loginSelectors = require("../Selectors/LoginPageSel")
 const {welcomeAssertion, validationAssert, userIcon, logoutButton, welcomeBackAssert, h1} = loginSelectors
 
+// test.beforeEach(async ({browser}) => { 
 
-   test ('Verify that the user is able to login with valid credentials', async ({page}) => {
+//     page = await browser.newPage()
+//     const login = new LoginPage(page)
+//     await login.gotoLogin()
+//     await login.loginBtnClick('1t.aamer@gmail.com', '!Test123*')
+
+// })
+
+test ('Verify that the user is able to login with valid credentials', async ({page}) => {
 
     const login = new LoginPage(page)
 
@@ -23,8 +32,8 @@ const {welcomeAssertion, validationAssert, userIcon, logoutButton, welcomeBackAs
 })
 
 test ('Verify that the user is not able to login with invalid credentials', async ({page}) => {
-    const login = new LoginPage(page)
 
+    const login = new LoginPage(page)
     await login.gotoLogin()
     await login.loginBtnClick('1t.aamer@gmail.comm', '!Test1232*')
 

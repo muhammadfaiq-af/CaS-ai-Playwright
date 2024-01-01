@@ -8,30 +8,18 @@ class Login {
         this.emailfield = '#email'
         this.passwordfield = '#password'
         this.loginBtn = '[type="submit"]'
-        this.URL = ['https://www.surveymonkey.com/welcome/sem/',
-                    'https://www.microsoft.com/en-us/', 
-                    'https://asana.com/',
-                    'https://www.concur.com/',
-                    'https://mailchimp.com/',
-                    'https://www.shopify.com/',
-                    'https://slack.com/',
-                    'https://www.adobe.com/',
-                    'https://www.snowflake.com/',
-                    'https://contentatscale.ai/',
-                    'https://www.imdb.com/',
-                    'https://www.primevideo.com/',
-                    'https://www.icc-cricket.com/',
-                    'https://bard.google.com/',
-                    'https://www.atlassian.com/',
-                    'https://asana.com/',
-                    'https://www.wrike.com/',
+        this.URL = ['https://www.w3schools.com/',
+                    'https://contentatscale.ai/', 
+                    'https://www.atlassian.com/software/jira',
                     'https://www.ubisoft.com/en-us/',
-                    'https://wwe.2k.com',
-                    'https://clickup.com/',
-                    'https://trello.com/',
-                    'https://www.datadoghq.com/',
-                    'https://www.browserstack.com/'
-]
+                    'https://www.dc.com/',
+                    'https://www.wikipedia.org/',
+                    'https://slack.com/',
+                    'https://www.daraz.pk/',
+                    'https://www.marvel.com/movies',
+                    'https://slack.com/',
+                    'https://hbi.org/'
+                ]
     }
 
     async gotoLogin()
