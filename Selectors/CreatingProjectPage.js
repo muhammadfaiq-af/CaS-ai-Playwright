@@ -16,7 +16,7 @@ module.exports = {
     wordsCount: '#words_count',
     createProjectButton: "//button[@type='submit']",
     writePostBtn: "//button[text()[normalize-space()='Write Post']]",
-    nextBtn: "//button[text()='Next']",
+    nextBtn: "div.right-btn >button.cs-secondary-btn.next-content",
     postKeyword: '#new-keyword',
     wordCountPost: '#new-keyword-word-count',
     contextPost: '#new-keyword-context',

@@ -3,11 +3,24 @@ const {test, expect} = require('@playwright/test')
 const aiDetectorSelector = require('../Selectors/aiDetectorPage.js')
 import {LoginPage} from '../Selectors/Common' 
 const {aiDectectoBtn, urlField, fetchUrlBtn, scanContentBtn, probability, chatGptContent} = aiDetectorSelector
-test ('Verify that the user is able to fetch content from the URL', async ({page}) => {
 
-    const login = new LoginPage(page)
-    await login.gotoLogin()
-    await login.loginBtnClick('1t.aamer@gmail.com', '!Test123*')
+let page;
+let login;
+
+test.beforeAll(async ({browser}) => {
+
+    page = await browser.newPage()
+    login = new LoginPage(page)
+
+})
+test.beforeEach('Login',async () => {
+
+
+    login.gotoLogin()
+    login.loginBtnClick('1t.aamer@gmail.com', '!Test123*')
+
+})
+test ('Verify that the user is able to fetch content from the URL', async () => {
 
     await page.click(aiDectectoBtn)
     await page.waitForTimeout(3000)
@@ -18,7 +31,6 @@ test ('Verify that the user is able to fetch content from the URL', async ({page
     await page.click(scanContentBtn)
 
     await page.waitForTimeout(14000)
-
 
     const passAsHuman = 'Passes as Human! '
     const readsLikeAi = 'Reads like AI! '
@@ -35,18 +47,10 @@ test ('Verify that the user is able to fetch content from the URL', async ({page
         const pass = await page.locator(probability);
         await expect(await pass).toHaveText(readsLikeAi);
     }
-
-       
-
-
 })
 
-test.only ('Verify that the user is able to scan content of Chatgpt', async ({page}) => {
+test ('Verify that the user is able to scan content of Chatgpt', async () => {
 
-
-    const login = new LoginPage(page)
-    await login.gotoLogin()
-    await login.loginBtnClick('1t.aamer@gmail.com', '!Test123*')
     await page.click(aiDectectoBtn)
     await page.waitForTimeout(3000)
     await page.fill('div.fr-element.fr-view', chatGptContent)
