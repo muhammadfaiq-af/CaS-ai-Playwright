@@ -13,5 +13,5 @@ test('Verify that the user is able to create a Project', async ({ page }) => {
     await login.loginBtnClick('1t.aamer@gmail.com', '!Test123*')
 
     await createProject1.createProject()
-
+    await expect(page.locator(inQueueTextVerification)).toContainText(' In Queue ')
 })

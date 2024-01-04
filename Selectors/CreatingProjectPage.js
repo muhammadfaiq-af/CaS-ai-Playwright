@@ -1,4 +1,4 @@
-import {expect} from "@playwright/test"
+
 const { LoginPage } = require("./Common")
 
 
@@ -74,8 +74,8 @@ exports.CreateProject =
             await this.page.click(this.createPostBtnPopup)
 
             await this.page.waitForTimeout(6000)
-            await expect(this.page.locator(this.inQueueTextVerification)).toContainText(' In Queue ')
-            await this.page.pause(3000)
+           
+           
 
         }
     }
