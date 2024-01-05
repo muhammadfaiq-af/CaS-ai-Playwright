@@ -1,17 +1,10 @@
-const { test, expect } = require('@playwright/test')
-
-import { DeleteProject } from '../Selectors/deleteProjectPage.js'
-import { LoginPage } from '../Selectors/Common.js'
+const { test, expect } = require('../fixture/fixture.js')
 
 
+test('Verify that the user is able to delete a project', async ({ page, Delete, Login}) => {
 
-test('Verify that the user is able to delete a project', async ({ page }) => {
+    await Login.gotoLogin()
+    await Login.loginBtnClick('1t.aamer@gmail.com', '!Test123*')
 
-    const deleteProject = new DeleteProject(page)
-    const loginPage = new LoginPage(page)
-
-    await loginPage.gotoLogin()
-    await loginPage.loginBtnClick('1t.aamer@gmail.com', '!Test123*')
-
-    await deleteProject.deleteProject()
+    await Delete.deleteProject()
 })

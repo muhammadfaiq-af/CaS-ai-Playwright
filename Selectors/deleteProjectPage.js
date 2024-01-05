@@ -1,7 +1,7 @@
 
-exports.DeleteProject =
 
-    class Delete {
+
+export class Delete {
 
         constructor(page) {
             this.page = page
