@@ -1,5 +1,3 @@
-const { LoginPage } = require("./Common")
-
 import { expect } from '@playwright/test'
 
 export class AI  { 

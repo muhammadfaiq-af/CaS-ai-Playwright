@@ -42,7 +42,7 @@ module.exports = defineConfig({
         screenshot: `only-on-failure`,
         video: `retain-on-failure`,
         trace: `retain-on-failure`,
-        // baseURL: 'https://staging.contentatscale.ai/'
+        baseURL: 'https://staging.contentatscale.ai/'
     },
     },
 

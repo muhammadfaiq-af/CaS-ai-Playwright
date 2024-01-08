@@ -1,48 +1,28 @@
-const { test, expect } = require('@playwright/test')
+const {test} =  require('../fixture/fixture.js')
 
-import { LoginPage } from '../Selectors/Common'
+test('Verify that the user is able to login with valid credentials', async ({ Login, LoginVerificationTest }) => {
 
+    await Login.gotoLogin()
+    await Login.loginBtnClick('1t.aamer@gmail.com', '!Test123*')
 
-const loginSelectors = require("../Selectors/LoginPageSel")
-const { welcomeAssertion, validationAssert, userIcon, logoutButton, welcomeBackAssert, h1 } = loginSelectors
-
-test('Verify that the user is able to login with valid credentials', async ({ page }) => {
-
-    const login = new LoginPage(page)
-
-
-    await login.gotoLogin()
-    await login.loginBtnClick('1t.aamer@gmail.com', '!Test123*')
-
-    const header = page.locator(h1);
-    //await expect(header).toContainText('Welcome back, Taimur Aamer!')
-
-    await expect(header).toHaveText(/.* Taimur Aamer!/)
-
-    await expect(page.locator(welcomeAssertion)).toContainText('Welcome back')
+    await LoginVerificationTest.validLogin()
 
 })
 
-test('Verify that the user is not able to login with invalid credentials', async ({ page }) => {
+test('Verify that the user is not able to login with invalid credentials', async ({ Login, LoginVerificationTest }) => {
 
-    const login = new LoginPage(page)
-    await login.gotoLogin()
-    await login.loginBtnClick('1t.aamer@gmail.comm', '!Test1232*')
+    await Login.gotoLogin()
+    await Login.loginBtnClick('1t.aamer@gmail.comm', '!Test1237*')
 
-    const strong = page.locator(validationAssert)
-    await expect(strong).toContainText(/.*These credentials do not match our records./)
+    await LoginVerificationTest.invalidLogin()
 
 })
 
-test('Verify that the user is able to logout from the website', async ({ page }) => {
+test('Verify that the user is able to logout from the website', async ({ Login, LoginVerificationTest }) => {
 
-    const login = new LoginPage(page)
-    await login.gotoLogin()
-    await login.loginBtnClick('1t.aamer@gmail.com', '!Test123*')
+    await Login.gotoLogin()
+    await Login.loginBtnClick('1t.aamer@gmail.com', '!Test123*')
 
-    await page.click(userIcon)
-    await page.click(logoutButton)
+    await LoginVerificationTest.logout()
 
-    await expect(page.locator(welcomeBackAssert)).toHaveText(/.* Welcome Back!/)
-    await page.waitForTimeout(5000)
 })

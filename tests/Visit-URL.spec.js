@@ -1,8 +1,4 @@
-const
-{
-    test, expect
-}=require('@playwright/test');
-const { title } = require('process');
+const { test, expect }= require ('@playwright/test');
 
 test("Verify that the user is able to access visit the login page",async ({page}) => {
 
