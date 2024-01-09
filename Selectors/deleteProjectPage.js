@@ -9,7 +9,7 @@ export class Delete {
                 this.settingBtn = '#m-setting-tab',
                 this.archiveBtn = '#delete-project',
                 this.deleteProjectBtnPopup = "//button[text()='Yes, delete it!']"
-                this.permenantArchive = 'archive-confirm-btn'
+                this.permenantArchive = '#archive-confirm-btn'
         }
 
         async deleteProject() {
@@ -40,8 +40,12 @@ export class Delete {
                         await this.page.waitForLoadState('networkidle');
                         await this.page.click(this.settingBtn);
                         await this.page.click(this.archiveBtn);
-                        await this.page.waitForTimeout(2000);
+                        await this.page.waitForTimeout(4000);
                         await this.page.click(this.permenantArchive);
+                        await this.page.waitForLoadState('networkidle')
+                        await this.page.click('.breadcrumb-item.parent-breadcrumb')
+                        await this.page.waitForLoadState('networkidle')
+
                         await this.page.waitForSelector(listOfProjects, { state: "visible" });
                         break;
                     }
