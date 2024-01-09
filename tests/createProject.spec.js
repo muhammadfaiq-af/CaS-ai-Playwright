@@ -1,9 +1,10 @@
 const {test} =  require('../fixture/fixture.js')
+const testdata = JSON.parse(JSON.stringify(require("../testData.json")))
 
 test('Verify that the user is able to create a Project', async ({ Login,CreateProject }) => {
 
     await Login.gotoLogin()
-    await Login.loginBtnClick('1t.aamer@gmail.com', '!Test123*')
+    await Login.loginBtnClick(testdata.emailData, testdata.passwordData)
 
 
     await CreateProject.createProject()
