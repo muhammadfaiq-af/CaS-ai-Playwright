@@ -1,7 +1,7 @@
 const {test} = require('../fixture/fixture.js');
 const testdata = JSON.parse(JSON.stringify(require("../testData.json")))
 
-// First we user require
+// First we require the json file
 // Then we done stringify whihc will convert javascript date into JSON Date 
 // Then we use Parse which will convert json data into object
 
