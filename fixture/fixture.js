@@ -6,6 +6,7 @@ import { Login } from '../Selectors/Common';
 import { CreateProject, Project } from "../Selectors/CreatingProjectPage";
 import {LoginVerificationTest} from "../Selectors/LoginPageSel";
 import {Dashboard} from "../Selectors/DashboardPageSel";
+const {testData} = require('../testData.json')
 
 exports.test = baseTest.extend({
     AI: async ({ page }, use) => {
@@ -28,6 +29,7 @@ exports.test = baseTest.extend({
     },
     Dashboard: async ({ page }, use) => {
         await use (new Dashboard(page))
+
     }
 
 })
