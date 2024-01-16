@@ -18,7 +18,8 @@
   "devDependencies": {
     "@faker-js/faker": "^8.3.1",
     "@playwright/test": "^1.40.1",
-    "@types/node": "^20.10.4"
+    "@types/node": "^20.10.4",
+    "allure-playwright": "^2.10.0"
   },
   "dependencies": {
     "puppeteer": "^21.6.0"

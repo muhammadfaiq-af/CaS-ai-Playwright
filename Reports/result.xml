@@ -1,0 +1,10 @@
+<testsuites id="" name="" tests="3" failures="0" skipped="0" errors="0" time="24.732827999999998">
+<testsuite name="Login.spec.js" timestamp="2024-01-16T12:18:52.359Z" hostname="chromium" tests="3" failures="0" skipped="0" time="33.523" errors="0">
+<testcase name="Verify that the user is able to login with valid credentials" classname="Login.spec.js" time="10.668">
+</testcase>
+<testcase name="Verify that the user is not able to login with invalid credentials" classname="Login.spec.js" time="6.679">
+</testcase>
+<testcase name="Verify that the user is able to logout from the website" classname="Login.spec.js" time="16.176">
+</testcase>
+</testsuite>
+</testsuites>
