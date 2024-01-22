@@ -1,0 +1,6 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Mon Jan 22 13:03:53 PKT 2024","Mon Jan 22 13:04:02 PKT 2024","9130","chromium","Login.spec.js","","","","Verify that the user is not able to login with invalid credentials",""
+"passed","Mon Jan 22 13:04:02 PKT 2024","Mon Jan 22 13:04:19 PKT 2024","16388","chromium","Login.spec.js","","","","Verify that the user is able to logout from the website",""
+"passed","Mon Jan 22 13:03:53 PKT 2024","Mon Jan 22 13:04:05 PKT 2024","12208","chromium","Login.spec.js","","","","Verify that the user is able to login with valid credentials",""
+"passed","Mon Jan 22 15:28:28 PKT 2024","Mon Jan 22 15:28:50 PKT 2024","22491","chromium","deleteProject.spec.js","","","","Verify that the user is able to delete a project",""
+"passed","Mon Jan 22 16:05:10 PKT 2024","Mon Jan 22 16:05:53 PKT 2024","42629","chromium","createProject.spec.js","","","","Verify that the user is able to create a Project",""

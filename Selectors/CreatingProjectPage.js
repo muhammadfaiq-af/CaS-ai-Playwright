@@ -111,6 +111,6 @@ export class CreateProject {
         await this.page.click(this.createPostBtnPopup)
 
         await this.page.waitForTimeout(6000)
-        await expect(this.page.locator(inQueueTextVerification)).toContainText(' In Queue ')
+        await expect(this.page.locator(this.inQueueTextVerification)).toContainText(' In Queue ')
     }
 }

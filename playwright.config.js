@@ -28,7 +28,7 @@ module.exports = defineConfig({
              ['html'],
              ['junit', {outputFile: './Reports/report.xml'}],
              ['json', {outputFile: './Reports/report.json'}],
-             ['allure-playwright', {outputFile: './Reports/Allure_report'}]],
+             ['allure-playwright']],
 
 
   
