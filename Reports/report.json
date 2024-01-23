@@ -11,7 +11,7 @@
     "grepInvert": null,
     "maxFailures": 0,
     "metadata": {
-      "actualWorkers": 1
+      "actualWorkers": 2
     },
     "preserveOutput": "always",
     "reporter": [
@@ -72,13 +72,13 @@
   },
   "suites": [
     {
-      "title": "deleteProject.spec.js",
-      "file": "deleteProject.spec.js",
+      "title": "Login.spec.js",
+      "file": "Login.spec.js",
       "column": 0,
       "line": 0,
       "specs": [
         {
-          "title": "Verify that the user is able to delete a project",
+          "title": "Verify that the user is able to login with valid credentials",
           "ok": true,
           "tags": [],
           "tests": [
@@ -92,25 +92,85 @@
                 {
                   "workerIndex": 0,
                   "status": "passed",
-                  "duration": 52571,
+                  "duration": 10734,
                   "errors": [],
-                  "stdout": [
-                    {
-                      "text": "No matching project found\n"
-                    }
-                  ],
+                  "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2024-01-22T11:09:21.907Z",
+                  "startTime": "2024-01-23T06:49:31.869Z",
                   "attachments": []
                 }
               ],
               "status": "expected"
             }
           ],
-          "id": "fb4d1378fee059628a3a-dac6a84b81ecbaeca785",
-          "file": "deleteProject.spec.js",
+          "id": "a117b01ab0140ca0a337-a4ebcda6716b0e0e9d52",
+          "file": "Login.spec.js",
           "line": 4,
+          "column": 1
+        },
+        {
+          "title": "Verify that the user is not able to login with invalid credentials",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "status": "passed",
+                  "duration": 8101,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2024-01-23T06:49:31.897Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a117b01ab0140ca0a337-082cb9b16513045464b4",
+          "file": "Login.spec.js",
+          "line": 13,
+          "column": 1
+        },
+        {
+          "title": "Verify that the user is able to logout from the website",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "status": "passed",
+                  "duration": 14820,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2024-01-23T06:49:40.959Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a117b01ab0140ca0a337-c171c306dd10c5d736fd",
+          "file": "Login.spec.js",
+          "line": 22,
           "column": 1
         }
       ]
@@ -118,9 +178,9 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2024-01-22T11:09:21.064Z",
-    "duration": 54697.868,
-    "expected": 1,
+    "startTime": "2024-01-23T06:49:31.175Z",
+    "duration": 24804.051,
+    "expected": 3,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0
