@@ -3,7 +3,7 @@ import { test as baseTest } from "@playwright/test"
 import { AI } from '../Selectors/aiDetectorPage';
 import { Delete } from '../Selectors/deleteProjectPage';
 import { Login } from '../Selectors/Common';
-import { CreateProject, Project } from "../Selectors/CreatingProjectPage";
+import { CreateProject } from "../Selectors/CreatingProjectPage";
 import {LoginVerificationTest} from "../Selectors/LoginPageSel";
 import {Dashboard} from "../Selectors/DashboardPageSel";
 const {testData} = require('../testData.json')
