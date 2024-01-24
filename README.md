@@ -1,4 +1,10 @@
 # Content at Scale (CaS) Automation Docmentation
+
+## Overview 
+
+This is a tool that uses AI to write content. It discusses the challenges of scaling content creation, and it can produce high-quality, original content that reads like it was written by a human. It can also be used to create content in multiple languages. Content at Scale is cheaper than hiring human writers, and it can save time. Overall, Content at Scale is a powerful tool that can help businesses create more content and reach a wider audience.
+
+
 ## Project Setup and Execution
 
 1. Retrieve a repository from my GitHub by cloning it https://github.com/muhammadfaiq-af/CaS-ai-PlaywrightConnect your Github account 
