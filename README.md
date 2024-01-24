@@ -65,12 +65,13 @@ Now the env variable has been set to get back to the VS Code and for Allure repo
 
 2. `npm i -D allure-commandline`
 
-3. To generate the report, `npx allure generate ./allure-results`  in which “allure-results“ is the folder you can give other names as well 
+3. To generate the report, `npx allure generate ./allure-report --clean`  in which “allure-results“ is the folder you can give other names as well 
 
 4. To Open the report, `npx allure open ./allure-report`
 
 
 ## Methodologies
+
    [Editor]: <https://code.visualstudio.com/>
    [node.js]: <http://nodejs.org>
    [Git Bash]: <https://git-scm.com/downloads/>
